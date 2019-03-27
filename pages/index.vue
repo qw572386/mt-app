@@ -4,19 +4,25 @@
       <el-col :span="5">
         <emenu />
       </el-col>
-      <el-col :span="19">2</el-col>
+      <el-col :span="19">
+        <elife />
+      </el-col>
     </el-row>
     <el-row :span="24">
-      3
+      <eartistic />
     </el-row>
   </div>
 </template>
 
 <script>
 import Emenu from '@/components/index/menu'
+import Elife from '@/components/index/life'
+import Eartistic from '@/components/index/artistic'
 export default {
   components: {
-    Emenu
+    Emenu,
+    Elife,
+    Eartistic
   }
 }
 </script>
