@@ -1,9 +1,10 @@
 .page-login{
+    padding-top: 40px;
     .login-header {
       position: relative;
       width: 980px;
       height: auto;
-      margin: 40px auto 30px;
+      margin: 0 auto 30px;
       .logo {
         background-image: url(//s0.meituan.net/bs/file/?f=fe-sso-fs:build/assets/sp-retina.b95a7dd.png);
         background-position: 0 !important;
@@ -60,8 +61,10 @@
 
       .foot {
         margin-top: 10px;
-        b {
+        .forgetPwd {
           float: right;
+          color: #2bb8aa;
+          text-decoration: none;
         }
       }
 
