@@ -16,17 +16,17 @@ export default {
             return '735520121@qq.com'
         },
         get pass() {
-            return '*****'
+            return '**********************'
+        },
+        get code() {
+            return () => {
+                return Math.random().toString(16).slice(2,6).toUpperCase();
+            }   
+        },
+        get expire() {
+            return () => {
+                return new Date().getTime() + 60 * 60 * 1000
+            }
         }
     },
-    get code() {
-        return () => {
-            return Math.random().toString(16).slice(2,6).toUpperCase();
-        }   
-    },
-    get expire() {
-        return () => {
-            return new Data().getTime() + 60 * 60 * 1000
-        }
-    }
 }
