@@ -6,8 +6,8 @@
             <div class="form">
                 <h4 v-if="error" class="tips"><i />{{error}}</h4>
                 <p><span>账号登录</span></p>
-                <el-input v-model="username" prefix-icon="profile" />
-                <el-input v-model="password" prefix-icon="password" type="password" />
+                <el-input v-model="username" prefix-icon="profile" @keyup.native.enter="login" />
+                <el-input v-model="password" prefix-icon="password" type="password" @keyup.native.enter="login" />
                 <div class="foot">
                     <el-checkbox v-model="checked">7天内自动登录</el-checkbox>
                     <a href="#" class="forgetPwd">忘记密码?</a>
@@ -39,9 +39,9 @@ export default {
             }).then(({status, data})=>{
                 if(status === 200) {
                     if(data && data.code === 0) {
-                    location.href = '/'
+                        location.href = '/'
                     } else {
-                    this.error = data.msg
+                        this.error = data.msg
                     }
                 } else {
                     this.error = `服务器出错，状态码${status}`
