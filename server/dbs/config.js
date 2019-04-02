@@ -29,4 +29,6 @@ export default {
             }
         }
     },
+    sign: "********************************",
+    requestUrl: "http://cp-tools.cn"
 }
