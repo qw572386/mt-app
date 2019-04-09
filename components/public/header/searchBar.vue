@@ -95,6 +95,7 @@
 </template>
 
 <script>
+  import _ from 'lodash'
     export default {
       data(){
         return {
@@ -121,9 +122,17 @@
             this.isFocus = false
           }, 200)
         },
-        input() {
-
-        }
+        input: _.debounce(async function () {
+          let self = this;
+          let city = self.$store.state.geo.position.city.replace('市', '')
+          self.searchList = []
+          let { status, data: { top } } = await self.$axios.get('/search/top', {
+            params: {
+              input: self.search,
+              city
+            }
+          })
+        })
       }
     }
 </script>
