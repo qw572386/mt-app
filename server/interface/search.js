@@ -74,5 +74,18 @@ router.get('/hotPlace', async ctx => {
     result: status === 200 ? result : []
   }
 })
-
+router.get('/resultsByKeywords', async ctx => {
+  const { city, keyword } = ctx.query;
+  let { status, data: { count, pois } } = await axios.get(`${config.requestUrl}/search/resultsByKeywords`, {
+    params: {
+      city,
+      keyword,
+      sign
+    }
+  })
+  ctx.body = {
+    count: status === 200 ? count : 0,
+    pois: status === 200 ? pois : []
+  }
+})
 export default router
