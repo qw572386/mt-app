@@ -42,7 +42,7 @@ router.get("/province", async ctx => {
     data: { province }
   } = await axios.get(`${config.requestUrl}/geo/province?sign=${sign}`);
   ctx.body = {
-    province: status === 0 ? province : []
+    province: status === 200 ? province : []
   };
 });
 router.get("/province/:id", async ctx => {
