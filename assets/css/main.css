@@ -40,8 +40,8 @@ footer{
 
 a, a:hover, a:focus, a:visited{
   color: #41B883;
+  text-decoration-line: none;
 }
-
 .logo {
   width: 243px;
   height: 218px;

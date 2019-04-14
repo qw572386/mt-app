@@ -6,23 +6,31 @@
             </el-col>
         </el-row>
         <el-row>
-            <el-col></el-col>
+            <el-col>
+                <iHot />
+            </el-col>
         </el-row>
         <el-row>
-            <el-col></el-col>
+            <el-col>
+                <iCategroy />
+            </el-col>
         </el-row>
     </div>
 </template>
 
 <script>
 import iSelect from '@/components/changeCity/iselect'
+import iHot from '@/components/changeCity/hot'
+import iCategroy from '@/components/changeCity/categroy'
 export default {
     components: {
-        iSelect
+        iSelect,
+        iHot,
+        iCategroy
     }
 }
 </script>
 
-<style lang="scss" scoped>
-
+<style lang="scss">
+    @import '@/assets/css/changecity/categroy.scss';
 </style>
