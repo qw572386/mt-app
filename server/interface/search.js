@@ -88,4 +88,20 @@ router.get('/resultsByKeywords', async ctx => {
     pois: status === 200 ? pois : []
   }
 })
+router.get('/products', async ctx => {
+  const keyword = ctx.query.keyword || '旅游';
+  const city = ctx.query.city || '旅游';
+  let { status, data: { product, more } } = await axios.get(`${config.requestUrl}/search/products`, {
+    params: {
+      city,
+      keyword,
+      sign
+    }
+  })
+  ctx.body = {
+    product: status === 200 ? product : {},
+    more: ctx.isAuthenticated() ? more : [],
+    login: ctx.isAuthenticated()
+  }
+})
 export default router
